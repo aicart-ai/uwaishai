@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aicart-ai.github.io/uwaishai/sitemap.xml
