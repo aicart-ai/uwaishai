@@ -1,0 +1,194 @@
+/* style.css - Neon Dark Theme with RGB Glow and Dino Animation */
+
+@keyframes rgbGlow {
+  0% { color: #ff0055; text-shadow: 0 0 10px #ff0055; }
+  10% { color: #ff9900; text-shadow: 0 0 10px #ff9900; }
+  20% { color: #00ff99; text-shadow: 0 0 10px #00ff99; }
+  30% { color: #66ff00; text-shadow: 0 0 10px #66ff00; }
+  40% { color: #00ccff; text-shadow: 0 0 10px #00ccff; }
+  50% { color: #ffcc00; text-shadow: 0 0 10px #ffcc00; }
+  60% { color: #cc00ff; text-shadow: 0 0 10px #cc00ff; }
+  70% { color: #ff00ff; text-shadow: 0 0 10px #ff00ff; }
+  80% { color: #ffff00; text-shadow: 0 0 10px #ffff00; }
+  90% { color: #ff3366; text-shadow: 0 0 10px #ff3366; }
+  100% { color: #ff0055; text-shadow: 0 0 10px #ff0055; }
+}
+
+@keyframes dinoWalk {
+  0% { content: '🦖'; left: -50px; opacity: 1; }
+  100% { content: '🦖'; left: 100vw; opacity: 0; }
+}
+
+.dino::before {
+  content: '🦖';
+  position: fixed;
+  top: calc(100% - 40px);
+  font-size: 32px;
+  animation: dinoWalk 2s linear infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0f0f0f;
+  color: #e0e0e0;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  animation: rgbGlow 5s infinite;
+  position: relative;
+  z-index: 1;
+}
+
+header.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  position: sticky;
+  top: 0;
+  background-color: #0f0f0f;
+  box-shadow: 0 2px 4px rgba(0, 255, 255, 0.2);
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  animation: rgbGlow 4s infinite;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  animation: rgbGlow 4s infinite;
+  color: inherit;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #ffffff;
+  text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff;
+}
+
+.section {
+  padding: 80px 40px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.home h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  animation: rgbGlow 4s infinite;
+}
+
+.home h1 span {
+  animation: rgbGlow 4s infinite;
+}
+
+.home p {
+  font-size: 1.2rem;
+  color: #ccc;
+  animation: rgbGlow 5s infinite;
+}
+
+.about p,
+.experience p,
+.experience ul,
+.projects p,
+.contact p {
+  font-size: 1rem;
+  color: #ccc;
+  animation: rgbGlow 6s infinite;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #00fff7;
+  padding-bottom: 5px;
+  animation: rgbGlow 4s infinite;
+}
+
+.project-card {
+  border: 1px solid #00ffe0;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 20px;
+  background-color: #1a1a1a;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 10px #00ffe0;
+  animation: rgbGlow 7s infinite;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px #00fff7;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #00ffe0;
+  color: #000;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 0 10px #00ffe0;
+  animation: rgbGlow 5s infinite;
+}
+
+.btn:hover {
+  background-color: #00bfb3;
+  color: #fff;
+  box-shadow: 0 0 15px #00fff7;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #141414;
+  color: #777;
+  margin-top: 60px;
+  border-top: 1px solid #00fff7;
+  animation: rgbGlow 6s infinite;
+}
+
+.section:hover {
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+/* Append dino animation container */
+body::after {
+  content: '';
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  background: transparent;
+}
+
+body.dino::before {
+  animation: dinoWalk 2s linear infinite;
+}
